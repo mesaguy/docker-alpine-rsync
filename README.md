@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Simple unprivileged rsync server.
+Simple unprivileged rsync server built for many architectures.
 
 rsync runs on tcp/8730 as the user 'nobody', logs are send to stdout.
 
@@ -23,5 +23,9 @@ docker run -p 873:8730 -v /mydata/:/export/ -it mesaguy/alpine-rsync
 
 Use a custom rsyncd configuration and multiple mounts
 ``` script
-docker run -p 873:8730 -v /mydata/:/export/data/ -v /my-www/:/export/www/ -v $(pwd)/rsyncd.conf:/etc/rsyncd.conf -it mesaguy/alpine-rsync
+docker run -p 873:8730 \
+    -v /mydata/:/export/data/ \
+    -v /my-www/:/export/www/ \
+    -v $(pwd)/rsyncd.conf:/etc/rsyncd.conf \
+    -it mesaguy/alpine-rsync
 ```

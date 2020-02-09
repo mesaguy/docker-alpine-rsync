@@ -1,6 +1,6 @@
 default: build
 
-BUILD_ARGS ?=
+DOCKER_BUILDX_ARGS ?=
 DOCKER_IMAGE ?= mesaguy/alpine-rsync
 ALPINE_VERSION ?= 3.11
 DOCKER_PLATFORMS = linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x,linux/386

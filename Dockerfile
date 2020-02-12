@@ -5,6 +5,7 @@ ARG VERSION=latest
 FROM alpine:$ALPINE_VERSION
 
 # Install rsync
+# hadolint ignore=DL3018
 RUN apk add --no-cache rsync && \
 # Make a root directory to share by default
 mkdir -p /export
